@@ -1,0 +1,30 @@
+{
+  "name": "dsck",
+  "version": "3.1.1",
+  "description": "A small, safe reactive dependency-graph kernel: mutate one node, every downstream dependent recomputes exactly once in correct topological order.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "reactive",
+    "dependency-graph",
+    "dag",
+    "state-management",
+    "topological-sort",
+    "spreadsheet-engine"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts",
+    "bench": "tsx bench/stress.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
